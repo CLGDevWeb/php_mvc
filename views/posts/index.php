@@ -11,9 +11,11 @@
             </small>
         </div>
         <div class="card-body">
-            <h5 class="card-title"><?= $post->title ?></h5>
+            <h5 class="card-title mb-1"><?= $post->title ?></h5>
             <div class="mb-2">
-                <span class="badge badge-info">!!!</span>
+                <?php foreach($post->getTags() as $tag): ?>
+                    <span class="badge badge-success"><a href="/php_mvc/tags/<?= $tag->id ?>" class="text-white"><?= $tag->name ?></a></span>
+                <?php endforeach ?>
             </div>
             <p class="card-text"><?= $post->getExcerpt() ?></p>
             <?= $post->getButton() ?>

@@ -21,12 +21,16 @@ class Post extends Model
     public function getButton(): string
     {
         return <<<HTML
-            <a href="/cours_php_poo_nord_coders/posts/$this->id" class="btn btn-primary">Lire plus</a>
+            <a href="/php_mvc/posts/$this->id" class="btn btn-primary float-right">Lire plus</a>
         HTML;
     }
 
     public function getTags()
     {
-        return $tags;
+        return $this->query("
+            SELECT t.* FROM tags t
+            INNER JOIN post_tag pt ON pt.tag_id = t.id
+            WHERE pt.post_id = ?
+        ", $this->id);
     }
 }

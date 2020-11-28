@@ -13,16 +13,14 @@ class PostController extends Controller
     
     public function index()
     {
-        $post = new Post($this->getDB());
-        $posts = $post->all();
+        $posts = (new Post($this->getDB()))->all();
 
         return $this->view('posts.index', compact('posts'));
     }
 
     public function show(int $id)
     {
-        $post = new Post($this->getDB());
-        $post = $post->findById($id);
+        $post = (new Post($this->getDB()))->findById($id);
         
         return $this->view('posts.show', compact('post'));
     }
