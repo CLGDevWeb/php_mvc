@@ -1,0 +1,11 @@
+{
+    "name": "chlouis/cours_php_poo_nord_coders",
+    "autoload": {
+        "psr-4": {
+            "Routes\\": "routes/",
+            "App\\": "app/",
+            "Database\\": "database/"
+        }
+    },
+    "require": {}
+}
