@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function home()
     {
-        return $this->view('posts.home');
+        return $this->view('home');
     }
     
     public function index()

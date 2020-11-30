@@ -26,7 +26,7 @@ abstract class Controller
 
         $content = ob_get_clean();
 
-        require VIEWS . 'layout.php';
+        require VIEWS . 'layouts/layout.php';
     }
 
     protected function getDB()
