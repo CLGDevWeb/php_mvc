@@ -22,7 +22,7 @@ abstract class Model
 
     public function findById(int $id): Model
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", $id, true);
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
     /**
@@ -30,15 +30,15 @@ abstract class Model
      * @param $param an id for findById() method
      * @param $single a boolean if it's prepare request, like findById() method
      */
-    public function query(string $sql, int $param = null, bool $single = null)
+    public function query(string $sql, array $param = null, bool $single = null)
     {
         $method = is_null($param) ? 'query' : 'prepare';
 
-        if (strpos($sql, 'DELETE') === 0 || strpos($sql, 'UPDATE') === 0 || strpos($sql, 'CREATE') === 0) {
+        if (strpos($sql, 'DELETE') === 0 || strpos($sql, 'UPDATE') === 0 || strpos($sql, 'INSERT') === 0) {
             $req = $this->db->getPDO()->$method($sql);
             $req->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
         
-            return $req->execute([$param]);
+            return $req->execute($param);
         }
 
         $fetch = is_null($single) ? 'fetchAll' : 'fetch';
@@ -50,12 +50,45 @@ abstract class Model
             return $req->$fetch();
         }
 
-        $req->execute([$param]);
+        $req->execute($param);
+
         return $req->$fetch();
+    }
+
+    public function create(array $data, ?array $relations = null)
+    {
+        $firstParenthesis = "";
+        $secondParenthesis = "";
+        $i = 1;
+
+        foreach ($data as $key => $value) {
+            $comma = $i === count($data) ? "" : ", ";
+            $firstParenthesis .= "{$key}{$comma}";
+            $secondParenthesis .= ":{$key}{$comma}";
+            $i++;
+        }
+
+        return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
     }
 
     public function destroy(int $id): bool
     {
-        return $this->query("DELETE FROM {$this->table} WHERE id = ?", $id);
+        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
+    }
+
+    public function update(int $id, array $data, ?array $relations = null)
+    {
+        $sqlRequestPart = "";
+        $i = 1;
+
+        foreach($data as $key => $value) {
+            $comma = $i === count($data) ? "" : ", ";
+            $sqlRequestPart .= "{$key} = :{$key}{$comma}";
+            $i++;
+        }
+
+        $data['id'] = $id;
+
+        return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
     }
 }

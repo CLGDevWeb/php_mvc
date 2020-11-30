@@ -21,8 +21,16 @@ $router->get('/posts', 'App\Controllers\PostController@index');
 $router->get('/posts/:id', 'App\Controllers\PostController@show');
 $router->get('/tags/:id', 'App\Controllers\TagController@show');
 
+$router->get('/login', 'App\Controllers\UserController@login');
+$router->post('/login', 'App\Controllers\UserController@store');
+$router->get('/logout', 'App\Controllers\UserController@logout');
+
 $router->get('/admin/posts', 'App\Controllers\Admin\PostController@index');
+$router->get('/admin/posts/create', 'App\Controllers\Admin\PostController@create');
+$router->post('/admin/posts/create', 'App\Controllers\Admin\PostController@store');
 $router->post('/admin/posts/delete/:id', 'App\Controllers\Admin\PostController@destroy');
+$router->get('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@edit');
+$router->post('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@update');
 
 try {
     $router->run();

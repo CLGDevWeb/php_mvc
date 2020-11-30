@@ -31,6 +31,37 @@ class Post extends Model
             SELECT t.* FROM tags t
             INNER JOIN post_tag pt ON pt.tag_id = t.id
             WHERE pt.post_id = ?
-        ", $this->id);
+        ", [$this->id]);
+    }
+
+    public function create(array $data, ?array $relations = null)
+    {
+        parent::create($data);
+
+        $id = $this->db->getPDO()->lastInsertId();
+
+        foreach ($relations as $tagId) {
+            $req = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
+            $req->execute([$id, $tagId]);
+        }
+
+        return true;
+    }
+
+    public function update(int $id, array $data, ?array $relations = null)
+    {
+        parent::update($id, $data);
+
+        $req = $this->db->getPDO()->prepare("DELETE FROM post_tag WHERE post_id = ?");
+        $result = $req->execute([$id]);
+
+        foreach ($relations as $tagId) {
+            $req = $this->db->getPDO()->prepare("INSERT post_tag (post_id, tag_id) VALUES (?, ?)");
+            $req->execute([$id, $tagId]);
+        }
+
+        if ($result) {
+            return true;
+        }
     }
 }
