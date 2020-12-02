@@ -7,7 +7,7 @@
         <title><?= APP_NAME ?></title>
     </head>
     <body class="bg-gray-900">
-        <header class="text-gray-300 bg-blue-800 body-font">
+        <header class="text-gray-300 bg-indigo-800 body-font">
             <div class="container mx-auto flex flex-wrap p-5 items-center">
 
                 <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
@@ -19,7 +19,7 @@
 
                 <nav class="mr-auto ml-4 py-1 pl-4 border-l border-gray-300	flex flex-wrap items-center text-base justify-center">
                     <a class="mr-5 hover:text-white" href="/php_mvc/">Accueil</a>
-                    <a class="mr-5 hover:text-white rounded px-2 py-1 ring-2 ring-blue-400 bg-blue-600" href="/php_mvc/posts">Articles</a>
+                    <a class="mr-5 hover:text-white rounded px-2 py-1" href="/php_mvc/posts">Actualités</a>
                     <?php if(isset($_SESSION['auth'])): ?>
                         <a class="mr-5 hover:text-white" href="/php_mvc/admin/posts">Admin</a>
                     <?php endif ?>

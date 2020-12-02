@@ -1,4 +1,10 @@
-<section class="w-full text-gray-500 flex flex-wrap">
+<div class="w-full flex items-center mt-6">
+    <h3 class="tracking-widest font-semibold text-xl uppercase title-font text-white pb-1 border-b-2 border-indigo-500">
+        Actualités
+    </h3>
+</div>
+
+<section class="w-full text-gray-500 flex flex-wrap -mx-3 mt-3">
 
         <?php foreach ($params['posts'] as $post) : ?>
             <div class="w-1/3 p-3">
@@ -6,7 +12,7 @@
 
                     <h2 class="text-2xl font-medium text-white title-font mb-2"><?= $post->title ?></h2>
                     <p class="leading-relaxed text-justify"><?= $post->getExcerpt(); ?></p>
-                    <a class="text-blue-500 inline-flex items-center my-4" href="/php_mvc/posts/<?= $post->id ?>">Lire plus
+                    <a class="text-indigo-500 inline-flex items-center my-4" href="/php_mvc/posts/<?= $post->id ?>">Lire plus
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
                             <path d="M12 5l7 7-7 7"></path>

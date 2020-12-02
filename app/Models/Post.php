@@ -15,7 +15,7 @@ class Post extends Model
 
     public function getExcerpt(): string
     {
-        return substr($this->content, 0, 300) . ' ...';
+        return substr($this->content, 0, 300) . ' (...)';
     }
 
     public function getButton(): string

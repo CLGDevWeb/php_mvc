@@ -1,7 +1,7 @@
 <section class="text-gray-500 bg-gray-900 body-font relative">
     <form class="container px-5 py-12 mx-auto" action="<?php isset($params['post']) ? "/php_mvc/admin/posts/edit/{$params['post']->id}" : "/php_mvc/admin/posts/create" ?>" method="POST">
-        <div class="flex flex-col text-center w-full mb-6">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white"><?= $params['post']->title ?? 'Créer un nouvel article' ?></h1>
+        <div class="w-1/3 mx-auto mb-6">
+            <h1 class="text-3xl font-medium title-font mb-4 text-white"><?= $params['post']->title ?? 'Créer un nouvel article' ?></h1>
         </div>
         <div class="w-1/3 mx-auto">
             <div class="flex flex-wrap -m-2">
@@ -23,16 +23,16 @@
                         <?php foreach ($params['tags'] as $tag) : ?>
                             <option value="<?= $tag->id ?>" <?php if (isset($params['post'])) : ?> 
                             <?php foreach ($params['post']->getTags() as $postTag) {
-                                echo ($tag->id === $postTag->id) ? 'selected' : '';
+                                echo ($tag->id === $postTag->id) ? 'class="text-indigo-500" selected' : '';
                             } ?> <?php endif ?>><?= $tag->name ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
-                <div class="p-2 w-full">
-                    <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <div class="p-2 w-full flex justify-between">
+                    <a href="/php_mvc/admin/posts/" class="text-white bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg">Retour</a>
+                    <button type="submit" class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                         <?= isset($params['post']) ? 'Enregistrer' : 'Créer' ?>
                     </button>
-                    <a href="/php_mvc/admin/posts/" class="btn btn-secondary">Retour</a>
                 </div>
             </div>
         </div>

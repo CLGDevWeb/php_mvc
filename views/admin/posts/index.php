@@ -1,12 +1,14 @@
 <?php if ($_GET['success'] ?? false): ?>
-    <div class="bg-red-lightest border-l-4 border-red text-red-dark p-4" role="alert">
-        <p class="font-bold">Connexion</p>
-        <p>Vous êtes connecté avec succés !/p>
+    <div class="flex justify-end items-center mt-4">
+        <div class="w-1/3 bg-green-600 text-white p-4 rounded shadow-lg" role="alert">
+            <p class="font-bold tracking-widest uppercase"># Connexion</p>
+            <p class="italic">Vous êtes connecté !</p>
+        </div>
     </div>
 <?php endif ?>
 
-<div class="w-full flex items-center mt-4">
-    <h3 class="tracking-widest font-semibold text-xl uppercase title-font text-white">
+<div class="w-full flex items-center mt-6">
+    <h3 class="tracking-widest font-semibold text-xl uppercase title-font text-white pb-1 border-b-2 border-indigo-500">
         Administration des articles
     </h3>
     <a href="/php_mvc/admin/posts/create" class="ml-auto inline-flex text-white bg-green-500 border-0 py-2 px-4 focus:outline-none hover:bg-green-600 rounded font-semibold">
@@ -14,7 +16,7 @@
     </a>
 </div>
 
-<div class="-mx-4 px-4 py-4 overflow-x-auto">
+<div class="-mx-4 px-4 py-4 overflow-x-auto mt-3">
     <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
         <table class="min-w-full leading-normal table-auto">
             <thead>
