@@ -1,39 +1,63 @@
-<div class="w-full flex items-center mt-6">
-    <h3 class="tracking-widest font-semibold text-xl uppercase title-font text-white pb-1 border-b-2 border-indigo-500">
-        Actualités
-    </h3>
-</div>
-
-<section class="w-full text-gray-500 flex flex-wrap -mx-3 mt-3">
-
-        <?php foreach ($params['posts'] as $post) : ?>
-            <div class="w-1/3 p-3">
-                <div class="bg-gray-800 rounded-2xl mb-5 px-8 py-16">
-
-                    <h2 class="text-2xl font-medium text-white title-font mb-2"><?= $post->title ?></h2>
-                    <p class="leading-relaxed text-justify"><?= $post->getExcerpt(); ?></p>
-                    <a class="text-indigo-500 inline-flex items-center my-4" href="/php_mvc/posts/<?= $post->id ?>">Lire plus
-                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14"></path>
-                            <path d="M12 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-
-                    <div class="text-center mt-8">
-                        <p>
-                            <?php foreach ($post->getTags() as $tag) : ?>
-                                <span class="tracking-widest font-medium title-font text-white">
-                                    <a href="/php_mvc/tags/<?= $tag->id ?>" class="text-white">
+<div class="relative flex flex-1 bg-gray-900 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="absolute inset-0">
+        <div class="bg-gray-400 h-1/3 sm:h-2/3"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="text-3xl tracking-tight font-extrabold text-gray-200 sm:text-4xl">
+                From the blog
+            </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
+            </p>
+        </div>
+        <section class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            <?php foreach ($params['posts'] as $post) : ?>
+                <article class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-shrink-0">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixqx=4bxs01cNtp&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">
+                    </div>
+                    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-indigo-600">
+                                <?php foreach ($post->getTags() as $tag) : ?>
+                                    <a href="/php_mvc/tags/<?= $tag->id ?>" class="hover:underline">
                                         <?= $tag->name ?>
                                     </a>
-                                </span>
-                            <?php endforeach ?>
-                        </p>
-                        <span class="mt-1 text-gray-600 text-sm"><?= $post->getCreatedAt() ?></span>
+                                <?php endforeach ?>
+                            </p>
+                            <a href="#" class="block mt-2">
+                                <p class="text-xl font-semibold text-gray-900">
+                                    <?= $post->title ?>
+                                </p>
+                                <p class="mt-3 text-base text-gray-500">
+                                    <?= $post->getExcerpt(); ?>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="mt-6 flex items-center">
+                            <div class="flex-shrink-0">
+                                <a href="#">
+                                    <span class="sr-only">Brenna Goyette</span>
+                                    <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixqx=4bxs01cNtp&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                </a>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">
+                                    <a href="#" class="hover:underline">
+                                        Brenna Goyette
+                                    </a>
+                                </p>
+                                <div class="flex space-x-1 text-sm text-gray-500">
+                                    <time datetime="2020-03-10">
+                                        <?= $post->getCreatedAt() ?>
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                </div>
-            </div>
-        <?php endforeach ?>
-
-</section>
+                </article>
+            <?php endforeach ?>
+        </section>
+    </div>
+</div>
