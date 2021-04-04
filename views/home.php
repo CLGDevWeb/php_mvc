@@ -1,13 +1,45 @@
-<div class="w-full flex items-center mt-6">
-    <h3 class="tracking-widest font-semibold text-xl uppercase title-font text-white pb-1 border-b-2 border-indigo-500">
-        Accueil
-    </h3>
-</div>
-
-<div class="w-full mt-4 text-gray-300">
-    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime impedit in ipsam quidem cumque nisi quasi, laborum quas illo porro voluptates accusamus, quisquam ducimus fugit cupiditate praesentium dolor magni, perferendis odio incidunt autem nobis. Assumenda nobis consectetur cum maiores atque veritatis magni iste, minima dolor dicta non voluptate fugiat dignissimos? Error expedita quisquam molestiae, consequuntur qui ut magni, tempora sunt animi eligendi, asperiores quos reprehenderit necessitatibus nam sint voluptatibus ad similique quibusdam aut nulla voluptatum. Facere nesciunt quo hic in eaque excepturi necessitatibus commodi quisquam quam, omnis ab laboriosam at? Animi eveniet tenetur quibusdam, maiores illo saepe officiis, obcaecati vero fuga est incidunt explicabo unde aspernatur. Quod eaque molestias facere error, maiores dolores debitis ipsam illum consequatur eveniet quae amet earum enim quo officia, ullam temporibus cum? Dolores in natus perferendis nam distinctio laborum provident voluptatum eos? Porro reprehenderit nam modi aliquid cum quos dolorum. Repellendus, quidem unde! Voluptatum recusandae exercitationem ipsum molestiae quam est cumque tempora adipisci quia quidem nostrum, rerum necessitatibus consequuntur illum numquam, accusamus alias tempore officiis aliquam! Nobis exercitationem suscipit numquam accusamus nisi cumque consequatur inventore. Nobis impedit, quaerat vel assumenda illo minus veritatis pariatur accusantium quas exercitationem beatae. Ipsa facere dolore, quidem nisi nihil quasi.</p>
-
-    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ducimus corrupti, sapiente neque amet quis a cumque ipsum odit in, quaerat vero veritatis molestias natus inventore nihil deserunt magni totam. Quas earum molestiae nemo. Similique inventore excepturi deleniti. Aliquam corporis doloribus quis suscipit ullam esse provident reprehenderit, ipsam quisquam tempora corrupti commodi blanditiis architecto odio temporibus cumque aperiam dolor veritatis delectus et. Sit illum accusantium cumque est dolore sunt obcaecati eos mollitia deleniti corrupti velit modi iste aspernatur, atque natus, nulla voluptas corporis architecto. Laboriosam dolores perferendis dolore possimus necessitatibus magnam suscipit amet sequi commodi officiis ad, quod distinctio voluptatum minima nobis, natus sint, nisi fuga eaque exercitationem ipsa? Qui placeat harum eveniet soluta cupiditate sapiente. Iste illum itaque blanditiis quos debitis praesentium porro error ea reprehenderit accusantium quaerat optio quidem iure distinctio, odio, vero totam vitae in cum dignissimos beatae? Perspiciatis veritatis corrupti quis possimus architecto tempore molestias modi consequuntur, mollitia eum quae libero, sapiente repellendus esse quos est maiores iure repellat aliquid quidem fugit? Cumque repellat nostrum quae alias inventore praesentium, quibusdam fugiat vero ipsum perspiciatis officia magni numquam officiis totam maiores tempora saepe dicta quaerat tenetur amet?</p>
-
-    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis iure necessitatibus atque dignissimos esse optio eos architecto tempore quis doloremque, consequuntur nostrum? Nemo, laborum quae! Exercitationem tempore, impedit sed dicta optio officiis minima. Cumque est illo voluptatum temporibus, officia iste saepe ab sequi itaque! Enim magnam, ullam aperiam itaque architecto quis natus delectus? Velit necessitatibus iure illum molestiae sed eum ipsum iusto, repellat dolore porro maxime laboriosam quo vero distinctio est sequi natus assumenda? Fugiat, obcaecati! Similique eum odio dolor perferendis a iste libero cupiditate rem corrupti voluptas iure soluta fuga quibusdam quaerat beatae officia molestiae neque, autem saepe. Temporibus mollitia adipisci quam architecto itaque officia veritatis facere velit natus incidunt iste excepturi culpa explicabo optio, soluta, voluptatum voluptatibus deleniti. In, culpa quia quaerat reiciendis odit quo quod error excepturi quidem quisquam laborum modi ratione debitis et ab id numquam libero ex harum eum similique recusandae. Quae at reiciendis doloribus, quibusdam asperiores voluptate optio ipsa saepe officia aperiam accusantium vero. Mollitia accusamus reiciendis saepe iusto cupiditate laudantium adipisci? Laudantium eum nihil delectus sapiente voluptatum laborum nobis. Rem ullam est, minus laboriosam recusandae dolorem delectus quidem iure explicabo nemo omnis, ex dolorum vel aperiam debitis odit, tenetur officia quis culpa? Consectetur, autem minus perspiciatis voluptatibus, nisi distinctio dolor, alias similique quia odio iste quaerat voluptas provident amet? Sapiente nam magni a explicabo suscipit doloribus ipsum, quia, debitis accusantium reiciendis accusamus hic atque cum voluptatum? Accusamus, consequatur nobis unde mollitia itaque voluptate amet, molestiae excepturi aut porro eligendi sequi eius dolore blanditiis esse ullam maxime soluta quis, voluptatum at. Amet, obcaecati.</p>
+<div class="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+    <div class="mx-auto max-w-7xl lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+        <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+            <div class="lg:py-24">
+            <a href="#" class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
+                <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full">We're hiring</span>
+                <span class="ml-4 text-sm">Visit our careers page</span>
+                <!-- Heroicon name: solid/chevron-right -->
+                <svg class="ml-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </a>
+            <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                <span class="block">A better way to</span>
+                <span class="block text-indigo-400">ship web apps</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
+            </p>
+            <div class="mt-10 sm:mt-12">
+                <form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                <div class="sm:flex">
+                    <div class="min-w-0 flex-1">
+                    <label for="email" class="sr-only">Email address</label>
+                    <input id="email" type="email" placeholder="Enter your email" class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
+                    </div>
+                    <div class="mt-3 sm:mt-0 sm:ml-3">
+                    <button type="submit" class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Start free trial</button>
+                    </div>
+                </div>
+                <p class="mt-3 text-sm text-gray-300 sm:mt-4">Start your free 14-day trial, no credit card necessary. By providing your email, you agree to our <a href="#" class="font-medium text-white">terms or service</a>.</p>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+            <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+            <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
+            <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/cloud-illustration-indigo-400.svg" alt="">
+            </div>
+        </div>
+        </div>
+    </div>
 </div>

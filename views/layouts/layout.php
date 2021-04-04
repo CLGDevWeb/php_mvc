@@ -3,44 +3,107 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="<?= SCRIPTS.'favicon.ico' ?>" />
         <link rel="stylesheet" href="<?= SCRIPTS.'css'.DIRECTORY_SEPARATOR.'tailwind.css' ?>">
         <title><?= APP_NAME ?></title>
     </head>
-    <body class="bg-gray-900">
-        <header class="text-gray-300 bg-indigo-800 body-font">
-            <div class="container mx-auto flex flex-wrap p-5 items-center">
+    <body class="min-h-screen">
+        <div class="relative overflow-hidden">
+            <header class="relative">
+                <div class="bg-gray-900 pt-6">
+                    <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+                        <div class="flex items-center flex-1">
+                            <div class="flex items-center justify-between w-full md:w-auto">
+                            <a href="#">
+                                <span class="sr-only"><?= APP_NAME ?></span>
+                                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="logo">
+                            </a>
+                            <div class="-mr-2 flex items-center md:hidden">
+                                <button type="button" class="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <!-- Heroicon name: outline/menu -->
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                                </button>
+                            </div>
+                            </div>
+                            <div class="hidden space-x-8 md:flex md:ml-10">
+                                <a href="/php_mvc/" class="text-base font-medium text-white hover:text-gray-300">Accueil</a>
 
-                <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    <span class="ml-3 text-xl"><?= APP_NAME ?></span>
-                </a>
+                                <a href="/php_mvc/posts" class="text-base font-medium text-white hover:text-gray-300">Actualités</a>
 
-                <nav class="mr-auto ml-4 py-1 pl-4 border-l border-gray-300	flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-5 hover:text-white" href="/php_mvc/">Accueil</a>
-                    <a class="mr-5 hover:text-white rounded px-2 py-1" href="/php_mvc/posts">Actualités</a>
-                    <?php if(isset($_SESSION['auth'])): ?>
-                        <a class="mr-5 hover:text-white" href="/php_mvc/admin/posts">Admin</a>
-                    <?php endif ?>
-                </nav>
+                                <a href="/php_mvc/about" class="text-base font-medium text-white hover:text-gray-300">Qui suis-je</a>
+                                <?php if(isset($_SESSION['auth'])): ?>
+                                    <a href="/php_mvc/admin/posts" class="text-base font-medium text-white hover:text-gray-300">Admin</a>
+                                <?php endif ?>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex md:items-center md:space-x-6">
+                            <?php if(isset($_SESSION['auth'])): ?>
+                                <a href="/php_mvc/logout" class="text-base font-medium text-white hover:text-gray-300">
+                                    Se déconnecter
+                                </a>
+                            <?php else: ?>
+                                <a href="/php_mvc/login" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+                                    Se connecter
+                                </a>
+                            <?php endif ?>
 
-                <?php if(isset($_SESSION['auth'])): ?>
-                    <a class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0" href="/php_mvc/logout">
-                        Se déconnecter
-                    </a>
-                <?php else: ?>
-                    <a class="inline-flex items-center bg-gray-800 text-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-600 hover:text-gray-100 rounded text-base mt-4 md:mt-0" href="/php_mvc/login">
-                        Se connecter
-                    </a>
-                <?php endif ?>
+                        </div>
+                    </nav>
+                </div>
 
-            </div>
-        </header>
+                <!--
+                    Mobile menu, show/hide based on menu open state.
 
-        <div class="container mx-auto px-5">
-            <?= $content ?> 
+                    Entering: "duration-150 ease-out"
+                    From: "opacity-0 scale-95"
+                    To: "opacity-100 scale-100"
+                    Leaving: "duration-100 ease-in"
+                    From: "opacity-100 scale-100"
+                    To: "opacity-0 scale-95"
+                -->
+                <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+                    <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div class="px-5 pt-4 flex items-center justify-between">
+                            <div>
+                                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+                            </div>
+                            <div class="-mr-2">
+                                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+                                    <span class="sr-only">Close menu</span>
+                                    <!-- Heroicon name: outline/x -->
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="pt-5 pb-6">
+                            <div class="px-2 space-y-1">
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Product</a>
+
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Features</a>
+
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Marketplace</a>
+
+                                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Company</a>
+                            </div>
+                            <div class="mt-6 px-5">
+                                <a href="#" class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Start free trial</a>
+                            </div>
+                            <div class="mt-6 px-5">
+                                <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#" class="text-gray-900 hover:underline">Login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <?= $content ?> 
+            </main>
         </div>
-        
     </body>
 </html>
